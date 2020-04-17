@@ -108,8 +108,10 @@ class SortingRobot:
         while self.light_is_on() is True:
             # Check if robot can move to the right
             while self.can_move_right() is True:
+                
                 # Move right to compare
                 self.move_right()
+                
                 if self.compare_item() == 1:
                     # If compare_item is 1, then robot is holding the larger
                     # value. Swap to hold smaller value.
@@ -118,15 +120,19 @@ class SortingRobot:
                 # If nothing to compare, robot is at the end of the list.
                 # Drop current value at the end
                 self.swap_item()
+                
                 # Terminate the while loop
                 self.set_light_off()
                 break
 
             else:
                 # If the robot can't move right, it must move left
+                
                 while self.can_move_left() is True:
+                    
                     # Move left and compare item
                     self.move_left()
+                    
                     if self.compare_item() is None:
                         # If robot moves left and finds nothing, drop
                         # current item at current location and move
@@ -135,6 +141,7 @@ class SortingRobot:
                         self.move_right()
                         self.swap_item()
                         break
+
 
 
 if __name__ == "__main__":

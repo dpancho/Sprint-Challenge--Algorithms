@@ -2,12 +2,12 @@
 
 ## Exercise I
 
-a)O(log n^3)
+a) O(n)
 
-b)O(n^2)
+b) O(log n)
 
-c)0(n-1)
+c) 0(n)
 
 ## Exercise II
 
-Start at f = 0. Drop an egg to see if it breaks. If not, drop and egg from position n to see if it breaks. If not, move to f = n - f / 2 (the middle). If an egg breaks go to the spot between n and f, if not,go to the spot between f and 0. Repeat until the correct f is found. This uses a binary search so n should be log(n)
+I'd use a binary search method and start on the middle floor, test it. If it breaks, go halfway between the middle and the bottom. If not, move up to halfway between middle and top. Continue this binary method until answer is obtained. O(log n)
